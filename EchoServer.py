@@ -31,6 +31,9 @@ try:
         if data:
             print(sys.stderr, 'Bouncing data back to client')
             connection.sendall(data)
+            packetData = connection.
+            print("Bouncing following data")
+            print(data)
         else:
             print(sys.stderr, 'End of data stream', client_address)
             break
