@@ -1,3 +1,4 @@
+
 import socket
 import sys
 
@@ -19,24 +20,30 @@ while True:
     print(sys.stderr, 'waiting on connection')
     connection, client_address = sock.accept()
 
+#try:
+print(sys.stderr, 'connection from', client_address)
+
+#recieve data and bounce it
+
 try:
-    print(sys.stderr, 'connection from', client_address)
+        print(sys.stderr, 'connection from', client_address)
 
-    #recieve data and bounce it
+        # Receive the data in small chunks and retransmit it
+        while True:
+            data = connection.recv(16)
+            print("hello there")
+            print(sys.stderr, 'received "%s"' % data)
+            if data:
+                print(sys.stderr, 'sending data back to the client')
+                connection.sendall(data)
+            else:
+                print(sys.stderr, 'no more data from', client_address)
+                break
+except:
+    print("Nothing yet")
 
-    while True:
-        data = connection.recv(16)
-        print(data)
-        print(sys.stderr, 'received "%s"' % data)
-        if data:
-            print(sys.stderr, 'Bouncing data back to client')
-            connection.sendall(data)
-            packetData = connection.
-            print("Bouncing following data")
-            print(data)
-        else:
-            print(sys.stderr, 'End of data stream', client_address)
-            break
+#print("Hello World")
+
 finally:
     #clean connection
     connection.close()
