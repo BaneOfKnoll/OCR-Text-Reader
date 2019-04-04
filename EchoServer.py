@@ -42,8 +42,7 @@ try:
 except:
     print("Nothing yet")
 
-#print("Hello World")
-#why the fuck aren't you logging print functions?!?!?!
+print("Hello World")
 
 finally:
     #clean connection
