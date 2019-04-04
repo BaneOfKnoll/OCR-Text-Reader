@@ -1,14 +1,15 @@
 
 #Importing Dependancies
-from pytesseract import *
-from PIL import *
-from pyautogui import *
-from time import *
-from os import system
-from datetime import *
+import pytesseract
+import PIL
+import pyautogui
+import time
+import os
+import datetime
+
 
 ##Variables##
-#imageFile = 
+#imageFile =
 num_seconds = 5
 
 #debug that it initiated
@@ -20,26 +21,26 @@ print("Initiating...")
 
 def shotRead():
     #Opening image and assigning to variable
-    ##im = Image.open("testImg.jpeg") #unquote for set image testing
+    im = PIL.Image.open("testImg.PNG") #unquote for set image testing
 
     #Find Area
-    topLeft = locateOnScreen('messengerIcon.PNG')
-    screenCap = screenshot(region = (43, 268, 428, 504))
+    #topLeft = locateOnScreen('messengerIcon.PNG')
+    #im = pyautogui.screenshot(region = (0, 0, 200, 150)) #Use for screen capture rather than pre set imageFile
     print("imported Image")
 
-    
-    
-    screenCap.save('output.jpeg')
+
+
+    #screenCap.save('output.jpeg')
 
     #Running Tesseract and pulling out the text
-    readText = pytesseract.image_to_string(screenCap, lang = 'eng')
+    readText = pytesseract.image_to_string(im, lang = 'eng')
 
 
     #Outputting the text to the output file
     outLog = open("Output.txt", "a")
     outLog.write("++++++++++++++")
     outLog.write("\n")
-    outLog.write(str(datetime.now()))
+    #outLog.write(str(date.datetime()))
     outLog.write("\n")
     outLog.write(readText)
     outLog.write("\n")
