@@ -1,4 +1,3 @@
-
 #Importing Dependancies
 import pytesseract
 import PIL

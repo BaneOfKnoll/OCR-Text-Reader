@@ -1,9 +1,5 @@
 ++++++++++++++
 
-Hello There|
-
-++++++++++++++
-
 Gill Sans
 
 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
