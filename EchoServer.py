@@ -17,9 +17,11 @@ sock.listen()
 
 while True:
     #wait for connection
+    print("Hello there, I got to Waiting on connection")
     print(sys.stderr, 'waiting on connection')
     connection, client_address = sock.accept()
 
+print("Hello there, I got to Up to the try function")
 #try:
 print(sys.stderr, 'connection from', client_address)
 
@@ -42,7 +44,7 @@ try:
 except:
     print("Nothing yet")
 
-print("Hello World")
+#print("Hello World")
 
 finally:
     #clean connection
