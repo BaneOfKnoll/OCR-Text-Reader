@@ -1,4 +1,3 @@
-
 import socket
 import sys
 
@@ -9,7 +8,6 @@ sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server_address = ('localhost', 10000)
 print(sys.stderr, 'starting up on %s port %s' % server_address)
 sock.bind(server_address)
-
 
 # listen for incoming connections
 
@@ -22,9 +20,7 @@ while True:
     connection, client_address = sock.accept()
 
 print("Hello there, I got to Up to the try function")
-#try:
 print(sys.stderr, 'connection from', client_address)
-
 #recieve data and bounce it
 
 try:
@@ -49,4 +45,3 @@ except:
 finally:
     #clean connection
     connection.close()
-
